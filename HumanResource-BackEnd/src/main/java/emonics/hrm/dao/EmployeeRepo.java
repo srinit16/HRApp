@@ -14,6 +14,7 @@ import emonics.hrm.entities.Employee;
 @Repository
 public interface EmployeeRepo extends JpaRepository<Employee, Integer>{
 			public List<Employee> findByDeptId(int id);
+			public List<Employee> findByDeptName(String name);
 			
 			@Query(value="select e from Employee e where e.salary >:sal")
 			public List<Employee> listAll(@Param("sal") double salary);
